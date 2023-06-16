@@ -29,6 +29,13 @@ export default function Navbar({}) {
 		>
 			{open ? (
 				<Typography
+					component={motion.div}
+					initial="closed"
+					animate={open ? "open" : "closed"}
+					variants={overlayMenuVariants}
+					transition={{
+						duration: 0.3,
+					}}
 					variant="h3"
 					sx={{
 						fontSize: {

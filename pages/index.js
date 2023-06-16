@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import { Box } from "@mui/material";
 import ToggleButton from "../src/components/toggleButton";
+import Hero from "@/src/components/Hero/Hero";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
 					border: "1px solid red",
 				}}
 			>
-				<p>Page Content</p>
+				<Hero />
 				{/* <ToggleButton /> */}
 			</Box>
 		</>
