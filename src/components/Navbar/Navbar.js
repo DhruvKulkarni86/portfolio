@@ -10,11 +10,17 @@ const overlayMenuVariants = {
 	closed: { x: "-100%" },
 };
 
+const navVariants = {
+	open: { x: 0 },
+	closed: { x: "-100%" },
+};
+
 export default function Navbar({}) {
 	const [open, setOpen] = React.useState(false);
 	return (
 		<Stack
 			direction="row"
+			component={motion.nav}
 			sx={{
 				alignItems: "center",
 				justifyContent: "space-around",
@@ -22,7 +28,7 @@ export default function Navbar({}) {
 				margin: "3vh auto 0",
 				backgroundColor: "black",
 				width: { md: "80vw", sm: "90vw", xs: "80vw" },
-				height: "6vw",
+				height: "3vw",
 				color: "#fff",
 				padding: { md: "2vw", sm: "4vw", xs: "7vw" },
 			}}
@@ -50,7 +56,7 @@ export default function Navbar({}) {
 			) : (
 				<Box
 					sx={{
-						width: { md: 70, sm: 55, xs: 40 },
+						width: { md: 60, sm: 55, xs: 40 },
 						height: { md: 70, sm: 55, xs: 40 },
 					}}
 				>

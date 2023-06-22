@@ -10,6 +10,7 @@ import ColorModeContext from "@/styles/colorModeContext";
 import lightTheme from "@/styles/theme/lightTheme";
 import darkTheme from "@/styles/theme/darkTheme";
 import MainLayout from "../src/components/Layouts/MainLayout";
+import "../styles/globals.css";
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 

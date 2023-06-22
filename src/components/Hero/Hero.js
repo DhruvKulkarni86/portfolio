@@ -1,5 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
+import WavingHand from "../Animations/WavingHand";
 
 export default function Hero() {
 	return (
@@ -25,7 +26,7 @@ export default function Hero() {
 						textAlign: { xs: "center", sm: "initial" },
 					}}
 				>
-					Hi, I&apos;m Dhruv Kulkarni 👋
+					Hi, I&apos;m Dhruv Kulkarni <WavingHand /> !
 				</Typography>
 				<Box sx={{ display: { xs: "flex", sm: "none" } }}>
 					<Image
