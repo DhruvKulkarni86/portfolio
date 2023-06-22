@@ -45,7 +45,7 @@ export default function MyApp(props) {
 			<ColorModeContext.Provider
 				value={{ darkMode, setDarkMode: _setDarkMode }}
 			>
-				<ThemeProvider theme={darkMode ? lightTheme : lightTheme}>
+				<ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
 					<CssBaseline />
 					{/* wrap a layout here */}
 					<MainLayout>

@@ -12,18 +12,15 @@ const lightTheme = createTheme({
 	palette: {
 		mode: "light",
 		primary: {
-			main: "#FFF",
+			main: "#f9fafb",
 		},
 		secondary: {
-			main: "#71b280",
-		},
-		back: {
-			main: "#EFF0F3",
-			contrastText: "#fff",
+			main: "#ecf1fb",
 		},
 		text: {
-			primary: "#102948",
-			secondary: "#2A2A2A",
+			primary: "#202146",
+			secondary: "#0e52f1",
+			light: "#858c9b",
 		},
 		button: {
 			main: "#FFCC30",

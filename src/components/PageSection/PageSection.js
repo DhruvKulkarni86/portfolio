@@ -5,7 +5,7 @@ export default function PageSection({ children }) {
 		<Box
 			component="section"
 			sx={{
-				backgroundColor: "black",
+				backgroundColor: "secondary.main",
 				paddingX: "5vw",
 				paddingY: 2,
 			}}

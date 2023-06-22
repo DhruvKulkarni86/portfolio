@@ -4,12 +4,13 @@ export default function NavResLink({ name, path, last }) {
 	return (
 		<Box
 			sx={{
-				borderTop: "2px solid white",
+				borderTop: "2px solid",
+				// borderColor: "primary.main",
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "flex-start",
 				padding: 2,
-				borderBottom: last ? "2px solid white" : "0px solid white",
+				borderBottom: last ? "2px solid " : "0px solid ",
 			}}
 		>
 			<Typography sx={{ fontSize: "2rem" }}>{name}</Typography>

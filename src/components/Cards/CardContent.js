@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import TooltipImage from "../TooltipImage/TooltipImage";
 
 export default function CardContent({ dir, type }) {
@@ -9,9 +9,8 @@ export default function CardContent({ dir, type }) {
 				width: "100%",
 				alignItems: "center",
 				justifyContent: "center",
-				border: "1px solid white",
 				borderRadius: dir === "l" ? "50px 0 0 50px " : "0 50px 50px 0",
-				backgroundColor: "#ffffff",
+				backgroundColor: "primary.main",
 				height: "310px",
 				width: { sm: "50%", xs: "100%" },
 			}}

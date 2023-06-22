@@ -1,8 +1,12 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Slide, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import WavingHand from "../Animations/WavingHand";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Hero() {
+	const ref = useRef(null);
+	// const isInView = useInView(ref, { once: true });
 	return (
 		<Stack
 			direction="row"
@@ -19,15 +23,28 @@ export default function Hero() {
 					alignItems: { xs: "center", sm: "initial" },
 				}}
 			>
-				<Typography
-					variant="h1"
-					sx={{
-						fontSize: { md: "4rem", sm: "3rem", xs: "3rem" },
-						textAlign: { xs: "center", sm: "initial" },
-					}}
-				>
-					Hi, I&apos;m Dhruv Kulkarni <WavingHand /> !
-				</Typography>
+				<Box ref={ref} sx={{ overflow: "hidden" }}>
+					<Slide
+						direction="up"
+						timeout={500}
+						in={useInView}
+						container={ref.current}
+					>
+						<Typography
+							variant="h1"
+							sx={{
+								fontSize: {
+									md: "4rem",
+									sm: "3rem",
+									xs: "3rem",
+								},
+								textAlign: { xs: "center", sm: "initial" },
+							}}
+						>
+							Hi, I&apos;m Dhruv Kulkarni <WavingHand /> !
+						</Typography>
+					</Slide>
+				</Box>
 				<Box sx={{ display: { xs: "flex", sm: "none" } }}>
 					<Image
 						src="/Person.webp"

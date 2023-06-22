@@ -1,9 +1,19 @@
 import { Box, Stack, Typography } from "@mui/material";
 import TooltipImage from "../TooltipImage/TooltipImage";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function CardResp({ type, title, desc }) {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true });
 	return (
 		<Stack
+			ref={ref}
+			style={{
+				transform: isInView ? "none" : "translateY(0px)",
+				opacity: isInView ? 1 : 0,
+				transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+			}}
 			sx={{
 				alignItems: "center",
 				justifyContent: "space-around",
@@ -93,7 +103,11 @@ export default function CardResp({ type, title, desc }) {
 				>
 					{title}
 				</Typography>
-				<Typography textAlign="center" variant="body1">
+				<Typography
+					textAlign="center"
+					variant="body1"
+					sx={{ color: "text.light" }}
+				>
 					{desc}
 				</Typography>
 			</Stack>

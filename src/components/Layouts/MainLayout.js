@@ -22,6 +22,7 @@ export default function MainLayout({ children }) {
 				sx={{
 					// paddingX: { xs: "5vw", sm: 0 },
 					paddingY: { md: "10vw", sm: "15vw", xs: "25vw" },
+					backgroundColor: "primary.main",
 				}}
 			>
 				{children}

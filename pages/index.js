@@ -4,8 +4,6 @@ import { Box } from "@mui/material";
 import ToggleButton from "../src/components/toggleButton";
 import Hero from "@/src/components/Hero/Hero";
 import PageSection from "../src/components/PageSection/PageSection";
-import CardDiv from "@/src/components/Cards/CardDiv";
-import CardTitle from "@/src/components/Cards/CardTitle";
 import ScrollCard from "@/src/components/Scroll/ScrollCard";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +28,7 @@ export default function Home() {
 					marginX: "5vw",
 					padding: 2,
 					backgroundColor: "primary.main",
-					border: "1px solid red",
+					// border: "1px solid red",
 				}}
 			>
 				<Hero />

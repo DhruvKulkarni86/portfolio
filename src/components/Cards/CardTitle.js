@@ -8,10 +8,10 @@ export default function CardTitle({ dir, title, desc }) {
 				width: "100%",
 				alignItems: "center",
 				justifyContent: dir === "l" ? "flex-start" : "flex-end",
-				border: "1px solid white",
+				// border: "1px solid white",
 				borderRadius: dir === "l" ? "50px 0 0 50px " : "0 50px 50px 0",
 				py: 2,
-				backgroundColor: "#ffffff",
+				backgroundColor: "primary.main",
 				height: "310px",
 				width: { sm: "50%", xs: "100%" },
 			}}
@@ -33,6 +33,7 @@ export default function CardTitle({ dir, title, desc }) {
 				<Typography
 					textAlign={dir === "l" ? "left" : "right"}
 					variant="body1"
+					sx={{ color: "text.light" }}
 				>
 					{desc}
 				</Typography>
