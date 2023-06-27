@@ -6,14 +6,19 @@ import { useRef } from "react";
 
 export default function Hero() {
 	const ref = useRef(null);
-	// const isInView = useInView(ref, { once: true });
+	const isInView = useInView(ref, { once: true });
 	return (
 		<Stack
 			direction="row"
 			sx={{
 				justifyContent: "space-around",
 				alignItems: "center",
-				mt: { sm: 5, xs: 2, md: 10 },
+				minHeight: {
+					xs: "100vh",
+					sm: "100vh",
+					md: "100vh",
+					xl: "50vh",
+				},
 			}}
 		>
 			<Stack
@@ -26,13 +31,14 @@ export default function Hero() {
 				<Box ref={ref} sx={{ overflow: "hidden" }}>
 					<Slide
 						direction="up"
-						timeout={500}
-						in={useInView}
+						timeout={800}
+						in={isInView}
 						container={ref.current}
 					>
 						<Typography
 							variant="h1"
 							sx={{
+								fontWeight: 500,
 								fontSize: {
 									md: "4rem",
 									sm: "3rem",
@@ -41,7 +47,7 @@ export default function Hero() {
 								textAlign: { xs: "center", sm: "initial" },
 							}}
 						>
-							Hi, I&apos;m Dhruv Kulkarni <WavingHand /> !
+							Hi, I&apos;m Dhruv Kulkarni <WavingHand />
 						</Typography>
 					</Slide>
 				</Box>

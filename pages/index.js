@@ -22,18 +22,10 @@ export default function Home() {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Box
-				sx={{
-					minHeight: { xs: "100vh", sm: "50vh", md: "100vh" },
-					marginX: "5vw",
-					padding: 2,
-					backgroundColor: "primary.main",
-					// border: "1px solid red",
-				}}
-			>
-				<Hero />
-			</Box>
 			<PageSection>
+				<Hero />
+			</PageSection>
+			<PageSection color="dark">
 				<ScrollCard />
 			</PageSection>
 		</>

@@ -8,10 +8,12 @@ export default function NavLink({ name, path }) {
 				mx: 1,
 				padding: 1,
 				cursor: "pointer",
-				fontSize: "1rem",
+				fontSize: { xs: "1rem", xl: "1.5rem" },
+				transition: "0.1s",
 				"&:hover": {
 					fontWeight: "bold",
-					color: "text.secondary",
+					transform: "scale(1.1)",
+					// color: "text.secondary",
 				},
 			}}
 		>

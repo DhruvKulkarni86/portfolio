@@ -13,6 +13,7 @@ export default function CardContent({ dir, type }) {
 				backgroundColor: "primary.main",
 				height: "310px",
 				width: { sm: "50%", xs: "100%" },
+				padding: { xs: 0, xl: 2 },
 			}}
 		>
 			<Stack sx={{ padding: 5, width: "100%", alignItems: "center" }}>

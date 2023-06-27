@@ -8,11 +8,11 @@ export default function CardTitle({ dir, title, desc }) {
 				width: "100%",
 				alignItems: "center",
 				justifyContent: dir === "l" ? "flex-start" : "flex-end",
-				// border: "1px solid white",
 				borderRadius: dir === "l" ? "50px 0 0 50px " : "0 50px 50px 0",
 				py: 2,
 				backgroundColor: "primary.main",
 				height: "310px",
+				padding: { xs: 0, xl: 2 },
 				width: { sm: "50%", xs: "100%" },
 			}}
 		>
@@ -22,10 +22,10 @@ export default function CardTitle({ dir, title, desc }) {
 			>
 				<Typography
 					variant="h2"
-					fontWeight="600"
+					fontWeight="500"
 					textAlign={dir === "l" ? "left" : "right"}
 					sx={{
-						fontSize: { md: "3.5rem", sm: "2rem" },
+						fontSize: { md: "3rem", sm: "2rem" },
 					}}
 				>
 					{title}

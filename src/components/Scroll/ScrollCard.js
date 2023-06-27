@@ -7,7 +7,11 @@ import CardResp from "../Cards/CardResp";
 export default function ScrollCard() {
 	return (
 		<>
-			<Box sx={{ display: { xs: "none", sm: "block" } }}>
+			<Box
+				sx={{
+					display: { xs: "none", sm: "block" },
+				}}
+			>
 				<CardDiv>
 					<CardTitle
 						dir="l"

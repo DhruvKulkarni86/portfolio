@@ -21,7 +21,7 @@ export default function MainLayout({ children }) {
 				component="main"
 				sx={{
 					// paddingX: { xs: "5vw", sm: 0 },
-					paddingY: { md: "10vw", sm: "15vw", xs: "25vw" },
+					// paddingY: { md: "10vw", sm: "15vw", xs: "25vw" },
 					backgroundColor: "primary.main",
 				}}
 			>

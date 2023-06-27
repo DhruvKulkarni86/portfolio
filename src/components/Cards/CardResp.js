@@ -20,7 +20,7 @@ export default function CardResp({ type, title, desc }) {
 				my: 2,
 				border: "1px solid white",
 				borderRadius: "50px",
-				backgroundColor: "#ffffff",
+				backgroundColor: "primary.main",
 				height: "450px",
 				width: "100%",
 				padding: 2,
@@ -95,7 +95,7 @@ export default function CardResp({ type, title, desc }) {
 			<Stack gap={2} sx={{ padding: 2, width: "100%" }}>
 				<Typography
 					variant="h2"
-					fontWeight="600"
+					fontWeight="500"
 					textAlign="center"
 					sx={{
 						fontSize: "2rem",
