@@ -28,14 +28,14 @@ export default function ScrollCard() {
 						desc="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, eligendi."
 					/>
 				</CardDiv>
-				<CardDiv>
+				{/* <CardDiv>
 					<CardTitle
 						dir="l"
 						title="Tools I frequently use"
 						desc="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, eligendi."
 					/>
 					<CardContent dir="r" type="tools" />
-				</CardDiv>
+				</CardDiv> */}
 			</Box>
 			<Box sx={{ display: { xs: "block", sm: "none" } }}>
 				<CardResp
@@ -48,11 +48,11 @@ export default function ScrollCard() {
 					title="My Full-Stack tech stack"
 					desc="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, eligendi."
 				/>
-				<CardResp
+				{/* <CardResp
 					type="tools"
 					title="Tools I frequently use"
 					desc="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, eligendi."
-				/>
+				/> */}
 			</Box>
 		</>
 	);

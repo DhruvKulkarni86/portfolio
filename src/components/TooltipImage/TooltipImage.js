@@ -1,4 +1,4 @@
-import { Box, Button, Fade, Tooltip } from "@mui/material";
+import { Box, Fade, Tooltip } from "@mui/material";
 import Image from "next/image";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import React from "react";
@@ -44,8 +44,8 @@ export default function TooltipImage({ name }) {
 								!open ? handleTooltipOpen : handleTooltipClose
 							}
 							src={path}
-							width={50}
-							height={50}
+							width={40}
+							height={40}
 							alt="javascript"
 						/>
 					</Tooltip>

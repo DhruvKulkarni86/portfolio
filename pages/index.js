@@ -1,10 +1,10 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import { Box } from "@mui/material";
-import ToggleButton from "../src/components/toggleButton";
 import Hero from "@/src/components/Hero/Hero";
 import PageSection from "../src/components/PageSection/PageSection";
 import ScrollCard from "@/src/components/Scroll/ScrollCard";
+import GradientCard from "@/src/components/Showcase/GradientCard";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -27,6 +27,12 @@ export default function Home() {
 			</PageSection>
 			<PageSection color="dark">
 				<ScrollCard />
+			</PageSection>
+			<PageSection>
+				<GradientCard />
+			</PageSection>
+			<PageSection>
+				<GradientCard dir="r" />
 			</PageSection>
 		</>
 	);

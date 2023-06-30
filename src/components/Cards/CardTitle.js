@@ -11,7 +11,7 @@ export default function CardTitle({ dir, title, desc }) {
 				borderRadius: dir === "l" ? "50px 0 0 50px " : "0 50px 50px 0",
 				py: 2,
 				backgroundColor: "primary.main",
-				height: "310px",
+				height: "300px",
 				padding: { xs: 0, xl: 2 },
 				width: { sm: "50%", xs: "100%" },
 			}}
@@ -25,7 +25,7 @@ export default function CardTitle({ dir, title, desc }) {
 					fontWeight="500"
 					textAlign={dir === "l" ? "left" : "right"}
 					sx={{
-						fontSize: { md: "3rem", sm: "2rem" },
+						fontSize: { md: "2.5rem", sm: "2rem" },
 					}}
 				>
 					{title}

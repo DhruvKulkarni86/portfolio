@@ -21,7 +21,7 @@ export default function CardResp({ type, title, desc }) {
 				border: "1px solid white",
 				borderRadius: "50px",
 				backgroundColor: "primary.main",
-				height: "450px",
+				height: "400px",
 				width: "100%",
 				padding: 2,
 			}}
@@ -43,13 +43,17 @@ export default function CardResp({ type, title, desc }) {
 							justifyContent: "center",
 						}}
 					>
-						<TooltipImage name="html" />
-						<TooltipImage name="css" />
+						{/* <TooltipImage name="html" />
+						<TooltipImage name="css" /> */}
 						<TooltipImage name="javascript" />
 						<TooltipImage name="java" />
 						<TooltipImage name="python" />
 						<TooltipImage name="php" />
-						<TooltipImage name="c" />
+						{/* <TooltipImage name="c" /> */}
+						<TooltipImage name="nodejs" />
+						<TooltipImage name="mongodb" />
+						<TooltipImage name="postgresql" />
+						<TooltipImage name="git" />
 					</Stack>
 				)}
 				{type === "tech" && (
@@ -61,20 +65,20 @@ export default function CardResp({ type, title, desc }) {
 							justifyContent: "center",
 						}}
 					>
-						<TooltipImage name="nextjs" />
 						<TooltipImage name="react" />
+						<TooltipImage name="nextjs" />
 						<TooltipImage name="mui" />
-						<TooltipImage name="nodejs" />
 						<TooltipImage name="express" />
-						<TooltipImage name="mongodb" />
-						<TooltipImage name="postgresql" />
 						<TooltipImage name="firebase" />
 						<TooltipImage name="supabase" />
 						<TooltipImage name="vercel" />
 						<TooltipImage name="netlify" />
+						{/* <TooltipImage name="postman" />
+						<TooltipImage name="figma" />
+						<TooltipImage name="vsc" /> */}
 					</Stack>
 				)}
-				{type === "tools" && (
+				{/* {type === "tools" && (
 					<Stack
 						direction="row"
 						sx={{
@@ -90,7 +94,7 @@ export default function CardResp({ type, title, desc }) {
 						<TooltipImage name="vsc" />
 						<TooltipImage name="notion" />
 					</Stack>
-				)}
+				)} */}
 			</Box>
 			<Stack gap={2} sx={{ padding: 2, width: "100%" }}>
 				<Typography

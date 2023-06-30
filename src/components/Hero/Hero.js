@@ -3,6 +3,9 @@ import Image from "next/image";
 import WavingHand from "../Animations/WavingHand";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Social from "../Social/Social";
+import person from "../../../public/personL.webp";
+import personRes from "../../../public/person.webp";
 
 export default function Hero() {
 	const ref = useRef(null);
@@ -19,6 +22,7 @@ export default function Hero() {
 					md: "100vh",
 					xl: "50vh",
 				},
+				mt: 2,
 			}}
 		>
 			<Stack
@@ -51,13 +55,14 @@ export default function Hero() {
 						</Typography>
 					</Slide>
 				</Box>
-				<Box sx={{ display: { xs: "flex", sm: "none" } }}>
-					<Image
-						src="/Person.webp"
-						alt="Dhruv K"
-						width={288}
-						height={389}
-					/>
+
+				<Box
+					sx={{
+						display: { xs: "flex", sm: "none" },
+						flexDirection: "column",
+					}}
+				>
+					<Image src={personRes} alt="Dhruv K" />
 				</Box>
 				<Typography
 					variant="body1"
@@ -72,13 +77,14 @@ export default function Hero() {
 					voluptates magni.
 				</Typography>
 			</Stack>
-			<Box sx={{ display: { xs: "none", sm: "flex" } }}>
-				<Image
-					src="/PersonL.webp"
-					alt="Dhruv K"
-					width={288}
-					height={389}
-				/>
+			<Box
+				sx={{
+					display: { xs: "none", sm: "flex" },
+					flexDirection: "column",
+				}}
+			>
+				<Image src={person} alt="Dhruv K" />
+				<Social />
 			</Box>
 		</Stack>
 	);
