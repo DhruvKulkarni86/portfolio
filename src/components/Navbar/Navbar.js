@@ -7,6 +7,10 @@ import NavResLink from "./NavResLink";
 import NavLink from "./NavLink";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 import { useTheme } from "@mui/material/styles";
+import icon from "../../../public/dk2w.svg";
+import iconD from "../../../public/dk2d.svg";
+import Image from "next/image";
+
 const overlayMenuVariants = {
 	open: { x: 0 },
 	closed: { x: "-100%" },
@@ -28,7 +32,8 @@ export default function Navbar({}) {
 				margin: "3vh auto 0",
 				backdropFilter: "blur( 6.5px )",
 				"-webkit-backdrop-filter": "blur( 6.5px )",
-				border: "0.5px solid #ecf1fb",
+				border: "0.5px solid ",
+				borderColor: "borderCol.main",
 				width: { md: "80vw", sm: "90vw", xs: "90vw", xl: "50vw" },
 				height: "3vw",
 				color: "#202146",
@@ -63,17 +68,25 @@ export default function Navbar({}) {
 						height: { md: 70, sm: 55, xs: 40 },
 					}}
 				>
-					<svg
-						style={{
-							width: "95%",
-							height: "95%",
-						}}
-						viewBox="0 0 196 196"
-						fill={mode === "light" ? "#202146" : "#e8e8fd"}
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path d="M78.499 56.38C94.9257 56.38 106.499 61.42 113.219 71.5C119.939 81.58 123.299 93.6667 123.299 107.76C123.299 121.853 119.939 133.94 113.219 144.02C106.499 154.007 94.9257 159 78.499 159H32.719V56.38H78.499ZM74.299 145.56C80.3657 145.56 85.7323 144.673 90.399 142.9C95.0657 141.033 98.939 137.347 102.019 131.84C105.192 126.24 106.779 118.213 106.779 107.76C106.779 97.3067 105.192 89.28 102.019 83.68C98.939 78.08 95.0657 74.3933 90.399 72.62C85.7323 70.7533 80.3657 69.82 74.299 69.82H47.979V145.56H74.299ZM156.198 85.64H174.538L144.298 114.62L173.558 159H157.178L134.498 124L124.138 133.94V159H109.718V56.38H124.138V116.3L156.198 85.64Z" />
-					</svg>
+					{mode === "light" ? (
+						<Image
+							src={icon}
+							style={{
+								maxWidth: "100%",
+								height: "auto",
+							}}
+							alt="Dhruv Kulkarni"
+						/>
+					) : (
+						<Image
+							src={iconD}
+							style={{
+								maxWidth: "100%",
+								height: "auto",
+							}}
+							alt="Dhruv Kulkarni"
+						/>
+					)}
 				</Box>
 			)}
 			<Stack
@@ -88,7 +101,7 @@ export default function Navbar({}) {
 			>
 				<NavLink name="home" />
 				<NavLink name="projects" />
-				<NavLink name="contact" />
+				<NavLink name="contact" path="#contact" />
 				<ThemeSwitch />
 			</Stack>
 			{/* {!open ? <HiMenuAlt2 /> : <IoIosCloseCircle />} */}

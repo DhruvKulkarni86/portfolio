@@ -14,7 +14,7 @@ export default function Hero() {
 		<Stack
 			direction="row"
 			sx={{
-				justifyContent: "space-around",
+				justifyContent: "space-between",
 				alignItems: "center",
 				minHeight: {
 					xs: "100vh",
@@ -22,7 +22,6 @@ export default function Hero() {
 					md: "100vh",
 					xl: "50vh",
 				},
-				mt: 2,
 			}}
 		>
 			<Stack
@@ -35,7 +34,7 @@ export default function Hero() {
 				<Box ref={ref} sx={{ overflow: "hidden" }}>
 					<Slide
 						direction="up"
-						timeout={800}
+						timeout={1800}
 						in={isInView}
 						container={ref.current}
 					>
@@ -44,7 +43,7 @@ export default function Hero() {
 							sx={{
 								fontWeight: 500,
 								fontSize: {
-									md: "4rem",
+									md: "3.5rem",
 									sm: "3rem",
 									xs: "3rem",
 								},

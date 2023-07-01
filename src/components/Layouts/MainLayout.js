@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 export default function MainLayout({ children }) {
 	return (
@@ -26,6 +27,16 @@ export default function MainLayout({ children }) {
 				}}
 			>
 				{children}
+			</Box>
+			<Box
+				component="footer"
+				sx={{
+					backgroundColor: "primary.main",
+					width: "100%",
+					display: "block",
+				}}
+			>
+				<Footer />
 			</Box>
 		</>
 	);

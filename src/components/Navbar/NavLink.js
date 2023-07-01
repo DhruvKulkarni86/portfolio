@@ -17,7 +17,7 @@ export default function NavLink({ name, path }) {
 				},
 			}}
 		>
-			{name}
+			<a href={path}>{name}</a>
 		</Typography>
 	);
 }

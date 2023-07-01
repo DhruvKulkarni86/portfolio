@@ -32,11 +32,14 @@ const lightTheme = createTheme({
 			light: "#858c9b",
 		},
 		button: {
-			main: "#FFCC30",
+			main: "#202146",
 			contrastText: "#fff",
 		},
 		buttonText: {
 			main: "#0D0D0D",
+		},
+		borderCol: {
+			main: "#dae5f3",
 		},
 	},
 	typography: {

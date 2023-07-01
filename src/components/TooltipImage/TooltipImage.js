@@ -19,10 +19,15 @@ export default function TooltipImage({ name }) {
 				<Box
 					sx={{
 						display: { xs: "flex", sm: "none" },
-						width: "25%",
+						// width: "25%",
 						alignItems: "center",
 						justifyContent: "center",
 						my: 1,
+						mx: 1,
+						padding: 2,
+						border: "1px solid",
+						borderColor: "borderCol.main",
+						borderRadius: "14px",
 					}}
 				>
 					<Tooltip
@@ -44,8 +49,8 @@ export default function TooltipImage({ name }) {
 								!open ? handleTooltipOpen : handleTooltipClose
 							}
 							src={path}
-							width={40}
-							height={40}
+							width={30}
+							height={30}
 							alt="javascript"
 						/>
 					</Tooltip>
@@ -56,10 +61,14 @@ export default function TooltipImage({ name }) {
 					display: { xs: "none", sm: "flex" },
 					alignItems: "center",
 					justifyContent: "center",
+					padding: 2,
+					border: "1px solid",
+					borderColor: "borderCol.main",
+					borderRadius: "14px",
 				}}
 			>
 				<Tooltip arrow TransitionComponent={Fade} title={name}>
-					<Image src={path} width={50} height={50} alt="javascript" />
+					<Image src={path} width={30} height={30} alt="javascript" />
 				</Tooltip>
 			</Box>
 		</>

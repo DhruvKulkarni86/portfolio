@@ -35,11 +35,14 @@ const darkTheme = createTheme({
 			light: "#858c9b",
 		},
 		button: {
-			main: "#EEBBC3",
+			main: "#e8e8fd",
 			contrastText: "#fff",
 		},
 		buttonText: {
 			main: "#232946",
+		},
+		borderCol: {
+			main: "#2a2c36",
 		},
 	},
 	typography: {
