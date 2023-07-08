@@ -7,11 +7,7 @@ import {
 	Typography,
 } from "@mui/material";
 import Image from "next/image";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-// import ecom2 from "../../../public/ecom2.png";
-// import ecom3 from "../../../public/ecom3.png";
 
 const gr1 =
 	"linear-gradient(90deg, rgb(255, 226, 210) 0%, rgb(255, 189, 205) 100%)";
@@ -19,30 +15,37 @@ const gr1 =
 const gr2 =
 	"linear-gradient(90deg, rgba(219,213,236,1) 0%, rgba(233,221,225,1) 46%, rgba(242,231,230,1) 100%)";
 
-export default function GradientCard({ project }) {
-	const dir = project.id;
-	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true });
+export default function ProjectCard({
+	Description,
+	Name,
+	Status,
+	Technologies,
+	URL,
+	Hero,
+}) {
+	// const dir = project.id;
+	console.log("PASS", {
+		des: Description.rich_text[0].plain_text,
+		name: Name.title[0].plain_text,
+		status: Status,
+		tech: Technologies,
+		URL: URL.url,
+		hero: Hero.files[0].file.url,
+	});
 
 	return (
 		<>
 			<Stack
-				ref={ref}
-				style={{
-					transform: isInView ? "none" : "translateY(0px)",
-					opacity: isInView ? 1 : 0,
-					transition:
-						"all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-				}}
 				gap={{ sm: 4, xs: 0 }}
 				sx={{
 					flexDirection: {
-						sm: dir === 2 ? "row-reverse" : "row",
+						sm: "row",
 						xs: "column-reverse",
 					},
 					alignItems: "center",
 					justifyContent: "center",
 					my: 4,
+					px: { xs: 0, md: 5 },
 				}}
 			>
 				<Stack
@@ -64,12 +67,8 @@ export default function GradientCard({ project }) {
 							},
 						}}
 					>
-						<a
-							href={project.demoLink}
-							rel="noreferrer"
-							target="_blank"
-						>
-							{project.projectTitle}
+						<a href={URL.url} rel="noreferrer" target="_blank">
+							{Name.title[0].plain_text}
 						</a>
 					</Typography>
 					<Stack
@@ -80,11 +79,7 @@ export default function GradientCard({ project }) {
 							aria-label="github"
 							sx={{ color: "text.primary" }}
 						>
-							<a
-								href={project.githubLink}
-								rel="noreferrer"
-								target="_blank"
-							>
+							<a href={URL.url} rel="noreferrer" target="_blank">
 								<FaGithub />
 							</a>
 						</IconButton>
@@ -92,11 +87,7 @@ export default function GradientCard({ project }) {
 							aria-label="github"
 							sx={{ color: "text.primary" }}
 						>
-							<a
-								href={project.demoLink}
-								rel="noreferrer"
-								target="_blank"
-							>
+							<a href={URL.url} rel="noreferrer" target="_blank">
 								<FaExternalLinkAlt />
 							</a>
 						</IconButton>
@@ -120,7 +111,7 @@ export default function GradientCard({ project }) {
 							textAlign: { xs: "justify", sm: "left" },
 						}}
 					>
-						{project.description}
+						{Description.rich_text[0].plain_text}
 					</Typography>
 					<Stack
 						direction="row"
@@ -130,10 +121,10 @@ export default function GradientCard({ project }) {
 							justifyContent: { xs: "center", sm: "flex-start" },
 						}}
 					>
-						{project.tech.map((t) => (
+						{Technologies.multi_select.map((t) => (
 							<Chip
-								key={t}
-								label={t}
+								key={t.name}
+								label={t.name}
 								sx={{
 									transition: "0.2s",
 									"&:hover": {
@@ -149,8 +140,9 @@ export default function GradientCard({ project }) {
 				</Stack>
 				<Box
 					sx={{
-						background: dir === 2 ? gr2 : gr1,
-						width: { xs: "100%", md: "50%" },
+						background: gr1,
+						width: { xs: "100%", md: "40%" },
+						height: "300px",
 						margin: "auto",
 						display: "flex",
 						alignItems: "center",
@@ -169,17 +161,13 @@ export default function GradientCard({ project }) {
 							display: { xs: "flex", sm: "none" },
 							alignItems: "center",
 							justifyContent: "center",
-							transform: "scale(0.9)",
+							transform: "scale(0.8)",
 						}}
 					>
-						<a
-							href={project.demoLink}
-							rel="noreferrer"
-							target="_blank"
-						>
+						<a href={URL.url} rel="noreferrer" target="_blank">
 							<Image
-								src={project.image[1]}
-								alt="fullstack ecommerce project"
+								src={Hero.files[0].file.url}
+								alt="project image"
 								width={800}
 								height={600}
 								style={{
@@ -189,20 +177,20 @@ export default function GradientCard({ project }) {
 							/>
 						</a>
 					</Box>
-					<a href={project.demoLink} rel="noreferrer" target="_blank">
+					<a href={URL.url} rel="noreferrer" target="_blank">
 						<Box
 							sx={{
 								display: { xs: "none", sm: "flex" },
 								alignItems: "center",
 								justifyContent: "center",
-								transform: "scale(0.9)",
+								transform: "scale(0.7)",
 							}}
 						>
 							<Image
-								src={project.image[0]}
+								src={Hero.files[0].file.url}
 								width={800}
 								height={600}
-								alt="fullstack ecommerce project"
+								alt="project image"
 								style={{
 									maxWidth: "100%",
 									height: "auto",

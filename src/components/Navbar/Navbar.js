@@ -70,6 +70,7 @@ export default function Navbar({}) {
 				>
 					{mode === "light" ? (
 						<Image
+							priority={true}
 							src={icon}
 							style={{
 								maxWidth: "100%",
@@ -79,6 +80,7 @@ export default function Navbar({}) {
 						/>
 					) : (
 						<Image
+							priority={true}
 							src={iconD}
 							style={{
 								maxWidth: "100%",

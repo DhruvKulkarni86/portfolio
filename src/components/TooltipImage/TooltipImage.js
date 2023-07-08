@@ -26,8 +26,10 @@ export default function TooltipImage({ name }) {
 						mx: 1,
 						padding: 2,
 						border: "1px solid",
-						borderColor: "borderCol.main",
+						// borderColor: "borderCol.main",
+						borderColor: "transparent",
 						borderRadius: "14px",
+						backgroundColor: "primary.main",
 					}}
 				>
 					<Tooltip
@@ -63,8 +65,10 @@ export default function TooltipImage({ name }) {
 					justifyContent: "center",
 					padding: 2,
 					border: "1px solid",
-					borderColor: "borderCol.main",
+					// borderColor: "borderCol.main",
+					borderColor: "transparent",
 					borderRadius: "14px",
+					backgroundColor: "primary.main",
 				}}
 			>
 				<Tooltip arrow TransitionComponent={Fade} title={name}>

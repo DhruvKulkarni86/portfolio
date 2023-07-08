@@ -10,7 +10,7 @@ export default function PageSection({ children, color }) {
 			component="section"
 			sx={{
 				// margin: "auto",
-				maxWidth: "100vw",
+				// maxWidth: "100vw",
 				// minHeight: "80vh",
 				backgroundColor:
 					color === "dark" ? "secondary.main" : "primary.main",
