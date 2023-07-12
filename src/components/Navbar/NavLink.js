@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import Link from "next/link";
 
 export default function NavLink({ name, path }) {
 	return (
@@ -17,7 +18,7 @@ export default function NavLink({ name, path }) {
 				},
 			}}
 		>
-			<a href={path}>{name}</a>
+			<Link href={path}>{name}</Link>
 		</Typography>
 	);
 }

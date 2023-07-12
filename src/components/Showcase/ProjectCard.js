@@ -7,6 +7,7 @@ import {
 	Typography,
 } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const gr1 =
@@ -22,6 +23,7 @@ export default function ProjectCard({
 	Technologies,
 	URL,
 	Hero,
+	id,
 }) {
 	// const dir = project.id;
 	console.log("PASS", {
@@ -31,6 +33,7 @@ export default function ProjectCard({
 		tech: Technologies,
 		URL: URL.url,
 		hero: Hero.files[0].file.url,
+		ID: id,
 	});
 
 	return (
@@ -44,7 +47,7 @@ export default function ProjectCard({
 					},
 					alignItems: "center",
 					justifyContent: "center",
-					my: 4,
+					my: 5,
 					px: { xs: 0, md: 5 },
 				}}
 			>
@@ -67,9 +70,9 @@ export default function ProjectCard({
 							},
 						}}
 					>
-						<a href={URL.url} rel="noreferrer" target="_blank">
+						<Link href={`/projects/${id}`}>
 							{Name.title[0].plain_text}
-						</a>
+						</Link>
 					</Typography>
 					<Stack
 						direction="row"

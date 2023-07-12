@@ -101,9 +101,9 @@ export default function Navbar({}) {
 					color: "text.primary",
 				}}
 			>
-				<NavLink name="home" />
-				<NavLink name="projects" />
-				<NavLink name="contact" path="#contact" />
+				<NavLink name="about" path="/#about" />
+				<NavLink name="projects" path="/projects" />
+				<NavLink name="contact" path="/#contact" />
 				<ThemeSwitch />
 			</Stack>
 			{/* {!open ? <HiMenuAlt2 /> : <IoIosCloseCircle />} */}
@@ -188,9 +188,22 @@ export default function Navbar({}) {
 							justifyContent: "center",
 						}}
 					>
-						<NavResLink name="Home" />
-						<NavResLink name="Projects" />
-						<NavResLink name="Contact" last={true} />
+						<NavResLink
+							setOpen={setOpen}
+							name="About"
+							path="/#about"
+						/>
+						<NavResLink
+							setOpen={setOpen}
+							name="Projects"
+							path="/projects"
+						/>
+						<NavResLink
+							setOpen={setOpen}
+							name="Contact"
+							path="/#contact"
+							last={true}
+						/>
 					</Stack>
 				</Box>
 			</Drawer>

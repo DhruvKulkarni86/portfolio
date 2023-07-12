@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
+import Link from "next/link";
 
-export default function NavResLink({ name, path, last }) {
+export default function NavResLink({ name, path, last, setOpen }) {
 	return (
 		<Box
 			sx={{
@@ -13,7 +14,16 @@ export default function NavResLink({ name, path, last }) {
 				borderBottom: last ? "2px solid " : "0px solid ",
 			}}
 		>
-			<Typography sx={{ fontSize: "2rem" }}>{name}</Typography>
+			<Typography sx={{ fontSize: "2rem" }}>
+				<Link
+					onClick={() => {
+						setOpen(false);
+					}}
+					href={path}
+				>
+					{name}
+				</Link>
+			</Typography>
 		</Box>
 	);
 }

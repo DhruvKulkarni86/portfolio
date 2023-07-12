@@ -25,7 +25,7 @@ export default function Home({ projData }) {
 			<PageSection>
 				<Hero />
 			</PageSection>
-			<PageSection color="dark">
+			<PageSection id="about" color="dark">
 				<About />
 			</PageSection>
 			<PageSection>

@@ -1,8 +1,7 @@
 import Head from "next/head";
 import { getDatabase, getPage } from "@/src/utils/notion";
-import PageSection from "../src/components/PageSection/PageSection";
-import GradientCard from "@/src/components/Showcase/GradientCard";
-import ProjectCard from "../src/components/Showcase/ProjectCard";
+import PageSection from "../../src/components/PageSection/PageSection";
+import ProjectCard from "../../src/components/Showcase/ProjectCard";
 import { Box, Typography } from "@mui/material";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
@@ -49,7 +48,11 @@ export default function Projects({ posts }) {
 							Project Showcase
 						</Typography>
 						{posts.map((proj) => (
-							<ProjectCard key={proj.id} {...proj.properties} />
+							<ProjectCard
+								key={proj.id}
+								{...proj.properties}
+								id={proj.id}
+							/>
 						))}
 					</Box>
 				</PageSection>
