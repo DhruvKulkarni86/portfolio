@@ -4,7 +4,7 @@ import WavingHand from "../Animations/WavingHand";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Social from "../Social/Social";
-import person from "../../../public/personL.webp";
+import person from "../../../public/personl.webp";
 import personRes from "../../../public/person.webp";
 import { FiDownload } from "react-icons/fi";
 
