@@ -1,7 +1,15 @@
 import { createTheme } from "@mui/material/styles";
 import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 
 export const poppins = Poppins({
+	weight: ["300", "400", "500", "700"],
+	subsets: ["latin"],
+	display: "swap",
+	fallback: ["Helvetica", "Arial", "sans-serif"],
+});
+
+export const inter = Inter({
 	weight: ["300", "400", "500", "700"],
 	subsets: ["latin"],
 	display: "swap",
@@ -41,6 +49,10 @@ const lightTheme = createTheme({
 		borderCol: {
 			main: "#dae5f3",
 		},
+		buttonContained: {
+			main: "#168aff",
+			dark: "#0288d1",
+		},
 	},
 	typography: {
 		button: {
@@ -52,7 +64,7 @@ const lightTheme = createTheme({
 				fontSize: "0.5rem",
 			},
 		},
-		fontFamily: poppins.style.fontFamily,
+		fontFamily: inter.style.fontFamily,
 	},
 	// typography: {
 	// 	fontFamily: ["Inter", "Poppins"],

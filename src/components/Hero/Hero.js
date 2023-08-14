@@ -1,4 +1,4 @@
-import { Box, Slide, Stack, Typography } from "@mui/material";
+import { Box, Button, Slide, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import WavingHand from "../Animations/WavingHand";
 import { useInView } from "framer-motion";
@@ -6,6 +6,7 @@ import { useRef } from "react";
 import Social from "../Social/Social";
 import person from "../../../public/personL.webp";
 import personRes from "../../../public/person.webp";
+import { FiDownload } from "react-icons/fi";
 
 export default function Hero() {
 	const ref = useRef(null);
@@ -22,12 +23,13 @@ export default function Hero() {
 					md: "100vh",
 					xl: "50vh",
 				},
+				mt: { xs: 10, sm: 0 },
 			}}
 		>
 			<Stack
 				sx={{
 					width: { md: "60%", xs: "100%" },
-					gap: { xs: 0, sm: 2 },
+					gap: { xs: 2, sm: 2 },
 					alignItems: { xs: "center", sm: "initial" },
 				}}
 			>
@@ -61,20 +63,58 @@ export default function Hero() {
 						flexDirection: "column",
 					}}
 				>
-					<Image src={personRes} alt="Dhruv K" />
+					<Image priority src={personRes} alt="Dhruv K" />
 				</Box>
 				<Typography
 					variant="body1"
 					sx={{
 						textAlign: { xs: "justify", sm: "initial" },
+						fontSize: { md: "1.5rem", sm: "1rem" },
+						fontWeight: 300,
 					}}
 				>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-					voluptates harum eveniet sint. Perspiciatis sed placeat,
-					corrupti labore iste eum? Culpa doloribus, quisquam
-					necessitatibus exercitationem tempore voluptatum in
-					voluptates magni.
+					A Frontend Web-Dev transitioning to Full-Stack. I love all
+					things web and crafting beautiful web experiences.
 				</Typography>
+				<Stack
+					direction="row"
+					gap={3}
+					sx={{
+						justifyContent: { xs: "space-around", sm: "initial" },
+						width: "100%",
+						mt: { xs: 1, sm: 0 },
+					}}
+				>
+					<Button
+						disableElevation
+						variant="contained"
+						color="info"
+						endIcon={<FiDownload />}
+						href="/resume.pdf"
+						target="_blank"
+						sx={{
+							fontSize: { xs: "0.9rem", sm: "initial" },
+							// backgroundColor: "#168aff",
+							width: { xs: "40%", sm: "30%", lg: "20%" },
+							textTransform: "none",
+						}}
+					>
+						Resume
+					</Button>
+					<Button
+						disableElevation
+						variant="outlined"
+						color="button"
+						href="#featured"
+						sx={{
+							fontSize: { xs: "0.9rem", sm: "initial" },
+
+							textTransform: "none",
+						}}
+					>
+						Featured Work
+					</Button>
+				</Stack>
 			</Stack>
 			<Box
 				sx={{
@@ -82,11 +122,9 @@ export default function Hero() {
 					flexDirection: "column",
 				}}
 			>
-				<Image src={person} alt="Dhruv K" />
+				<Image priority src={person} alt="Dhruv K" />
 				<Social />
 			</Box>
 		</Stack>
 	);
 }
-
-//! Add social media icons here

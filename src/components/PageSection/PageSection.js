@@ -2,11 +2,12 @@ import { Box } from "@mui/material";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function PageSection({ children, color }) {
+export default function PageSection({ children, color, id }) {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
 	return (
 		<Box
+			id={id}
 			component="section"
 			sx={{
 				// margin: "auto",
@@ -15,7 +16,7 @@ export default function PageSection({ children, color }) {
 				backgroundColor:
 					color === "dark" ? "secondary.main" : "primary.main",
 				paddingX: "5vw",
-				paddingY: 2,
+				paddingY: { sm: id === "featured" ? 8 : 2, xs: 2 },
 				// minHeight: { xs: "100vh", xl: "50vh" },
 				// display: "flex",
 				// alignItems: "center",
@@ -32,7 +33,6 @@ export default function PageSection({ children, color }) {
 				}}
 				sx={{
 					// mt: "20vh",
-
 					margin: "auto",
 					maxWidth: { xs: "100%", md: "80vw", xl: "50vw" },
 					minHeight: { xs: "100vh", xl: "50vh" },

@@ -17,24 +17,27 @@ export default function Social() {
 					href="https://github.com/DhruvKulkarni86/"
 					rel="noreferrer"
 					target="_blank"
+					aria-label="github"
 				>
 					<FaGithub />
 				</a>
 			</IconButton>
-			<IconButton aria-label="github" sx={{ color: "text.primary" }}>
+			<IconButton aria-label="gmail" sx={{ color: "text.primary" }}>
 				<a
-					href="https://github.com/DhruvKulkarni86/"
+					href="mailto:dhruvkulkarni96@gmail.com"
 					rel="noreferrer"
 					target="_blank"
+					aria-label="gmail"
 				>
 					<SiGmail />
 				</a>
 			</IconButton>
-			<IconButton aria-label="github" sx={{ color: "text.primary" }}>
+			<IconButton aria-label="linkedin" sx={{ color: "text.primary" }}>
 				<a
-					href="https://github.com/DhruvKulkarni86/"
+					href="https://www.linkedin.com/in/dhruvkulkarn1/"
 					rel="noreferrer"
 					target="_blank"
+					aria-label="linkedin"
 				>
 					<FaLinkedin />
 				</a>

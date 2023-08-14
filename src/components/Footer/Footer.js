@@ -20,7 +20,15 @@ export default function Footer() {
 			<Box sx={{ transform: "scale(0.8)", minHeight: "2%" }}>
 				<Social />
 			</Box>
-			<Stack direction="row" gap={1}>
+			<Stack
+				direction="row"
+				gap={1}
+				sx={{
+					alignItems: "center",
+					justifyContent: "center",
+					textAlign: "center",
+				}}
+			>
 				<Typography variant="body2">
 					Created with <strong>NextJS</strong>
 				</Typography>

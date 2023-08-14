@@ -62,6 +62,16 @@ export default function Projects({ posts }) {
 }
 
 export const getStaticProps = async () => {
+	// try {
+	// 	const { data, errors } = await getDatabase(databaseId);
+	// 	if (errors || !data) {
+	// 		return { notFound: true };
+	// 	}
+	// 	return { props: { posts: data } };
+	// } catch (error) {
+	// 	return { notFound: true };
+	// }
+
 	const database = await getDatabase(databaseId);
 	return {
 		props: {

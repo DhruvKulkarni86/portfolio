@@ -9,10 +9,10 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { CgFileDocument } from "react-icons/cg";
 
 const gr1 =
 	"linear-gradient(90deg, rgb(255, 226, 210) 0%, rgb(255, 189, 205) 100%)";
-
 const gr2 =
 	"linear-gradient(90deg, rgba(219,213,236,1) 0%, rgba(233,221,225,1) 46%, rgba(242,231,230,1) 100%)";
 
@@ -20,21 +20,28 @@ export default function ProjectCard({
 	Description,
 	Name,
 	Status,
+	BlogStatus,
 	Technologies,
 	URL,
+	DeployURL,
 	Hero,
 	id,
+	Color,
 }) {
 	// const dir = project.id;
 	console.log("PASS", {
 		des: Description.rich_text[0].plain_text,
 		name: Name.title[0].plain_text,
-		status: Status,
+		status: Status.status.name,
+		blogStatus: BlogStatus.status.name,
 		tech: Technologies,
 		URL: URL.url,
+		deploy: DeployURL.url,
 		hero: Hero.files[0].file.url,
 		ID: id,
 	});
+	let clr = Color.select.name;
+	console.log("COLOR", clr);
 
 	return (
 		<>
@@ -54,7 +61,7 @@ export default function ProjectCard({
 				<Stack
 					gap={{ sm: 2, xs: 2 }}
 					sx={{
-						maxWidth: { xs: "100%", sm: "50%" },
+						width: { xs: "100%", sm: "50%" },
 						py: { xs: 2, sm: 0 },
 					}}
 				>
@@ -70,9 +77,9 @@ export default function ProjectCard({
 							},
 						}}
 					>
-						<Link href={`/projects/${id}`}>
-							{Name.title[0].plain_text}
-						</Link>
+						{/* <Link href={`/projects/${id}`}> */}
+						{Name.title[0].plain_text}
+						{/* </Link> */}
 					</Typography>
 					<Stack
 						direction="row"
@@ -86,26 +93,30 @@ export default function ProjectCard({
 								<FaGithub />
 							</a>
 						</IconButton>
-						<IconButton
-							aria-label="github"
-							sx={{ color: "text.primary" }}
-						>
-							<a href={URL.url} rel="noreferrer" target="_blank">
-								<FaExternalLinkAlt />
-							</a>
-						</IconButton>
-						{/* <IconButton
-							aria-label="github"
-							sx={{ color: "text.primary" }}
-						>
-							<a
-								href={project.blogLink}
-								rel="noreferrer"
-								target="_blank"
+						{Status.status.name === "Deployed" && (
+							<IconButton
+								aria-label="demo"
+								sx={{ color: "text.primary" }}
 							>
-								<IoReaderOutline />
-							</a>
-						</IconButton> */}
+								<a
+									href={DeployURL.url}
+									rel="noreferrer"
+									target="_blank"
+								>
+									<FaExternalLinkAlt />
+								</a>
+							</IconButton>
+						)}
+						{BlogStatus.status.name === "Done" && (
+							<IconButton
+								aria-label="blog"
+								sx={{ color: "text.primary" }}
+							>
+								<Link href={`/projects/${id}`}>
+									<CgFileDocument />
+								</Link>
+							</IconButton>
+						)}
 					</Stack>
 					<Typography
 						variant="body1"
@@ -143,7 +154,7 @@ export default function ProjectCard({
 				</Stack>
 				<Box
 					sx={{
-						background: gr1,
+						background: clr === "2" ? gr1 : gr2,
 						width: { xs: "100%", md: "40%" },
 						height: "300px",
 						margin: "auto",
@@ -167,40 +178,40 @@ export default function ProjectCard({
 							transform: "scale(0.8)",
 						}}
 					>
-						<a href={URL.url} rel="noreferrer" target="_blank">
-							<Image
-								src={Hero.files[0].file.url}
-								alt="project image"
-								width={800}
-								height={600}
-								style={{
-									maxWidth: "100%",
-									height: "auto",
-								}}
-							/>
-						</a>
-					</Box>
-					<a href={URL.url} rel="noreferrer" target="_blank">
-						<Box
-							sx={{
-								display: { xs: "none", sm: "flex" },
-								alignItems: "center",
-								justifyContent: "center",
-								transform: "scale(0.7)",
+						{/* <a href={URL.url} rel="noreferrer" target="_blank"> */}
+						<Image
+							src={Hero.files[0].file.url}
+							alt="project image"
+							width={800}
+							height={600}
+							style={{
+								maxWidth: "100%",
+								height: "auto",
 							}}
-						>
-							<Image
-								src={Hero.files[0].file.url}
-								width={800}
-								height={600}
-								alt="project image"
-								style={{
-									maxWidth: "100%",
-									height: "auto",
-								}}
-							/>
-						</Box>
-					</a>
+						/>
+						{/* </a> */}
+					</Box>
+					{/* <a href={URL.url} rel="noreferrer" target="_blank"> */}
+					<Box
+						sx={{
+							display: { xs: "none", sm: "flex" },
+							alignItems: "center",
+							justifyContent: "center",
+							transform: "scale(0.7)",
+						}}
+					>
+						<Image
+							src={Hero.files[0].file.url}
+							width={800}
+							height={600}
+							alt="project image"
+							style={{
+								maxWidth: "100%",
+								height: "auto",
+							}}
+						/>
+					</Box>
+					{/* </a> */}
 				</Box>
 			</Stack>
 			<Divider />

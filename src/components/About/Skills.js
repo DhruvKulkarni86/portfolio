@@ -24,7 +24,7 @@ export default function Skills() {
 						variant="subtitle1"
 						fontWeight="500"
 						sx={{
-							padding: 2,
+							px: 2,
 							pl: 0,
 						}}
 					>
@@ -58,7 +58,7 @@ export default function Skills() {
 						variant="subtitle1"
 						fontWeight="500"
 						sx={{
-							padding: 2,
+							px: 2,
 							pl: 0,
 						}}
 					>

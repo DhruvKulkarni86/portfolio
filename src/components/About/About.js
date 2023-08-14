@@ -1,15 +1,17 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, Button } from "@mui/material";
 import Skills from "./Skills";
+import { FiDownload } from "react-icons/fi";
 
 export default function About() {
 	return (
 		<Stack
-			id="about"
+			// id="about"
 			direction={{ xs: "column", sm: "row" }}
 			gap={{ sm: 4, xs: 4 }}
 			sx={{
 				justifyContent: { xs: "center", sm: "space-between" },
 				alignItems: "baseline",
+				my: { xs: 10, sm: 0 },
 			}}
 		>
 			<Stack
@@ -24,7 +26,7 @@ export default function About() {
 					fontWeight="500"
 					sx={{
 						fontSize: { xs: "1.5rem", sm: "2rem" },
-						py: { xs: 2, sm: 0 },
+						pt: { xs: 2, sm: 0 },
 						textAlign: {
 							xs: "center",
 							sm: "initial",
@@ -41,13 +43,13 @@ export default function About() {
 						textAlign: { xs: "justify", sm: "left" },
 					}}
 				>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Nihil, perspiciatis repudiandae? Ipsam quaerat ipsum minima
-					ut saepe voluptate, pariatur tempora amet commodi officia
-					corporis iure eaque ratione error ad veniam, a accusantium
-					illum aliquid nam quos vel rerum. Quis possimus vero
-					repellendus ab iste earum mollitia magnam exercitationem
-					eveniet magni.
+					I create dynamic and performant Web Applications using the
+					<strong> MERN</strong> stack and <strong>NextJS</strong>.
+					Passionate about UIs, I&apos;m on a journey to constantly
+					refine and optimize the visual and interactive aspects of my
+					projects. I love to experiment and integrate the latest web
+					dev trends in my projects. Curerently exploring the domain
+					of cloud computing.
 				</Typography>
 			</Stack>
 			<Skills />

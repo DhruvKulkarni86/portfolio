@@ -10,6 +10,7 @@ import { useTheme } from "@mui/material/styles";
 import icon from "../../../public/dk2w.svg";
 import iconD from "../../../public/dk2d.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 const overlayMenuVariants = {
 	open: { x: 0 },
@@ -30,13 +31,13 @@ export default function Navbar({}) {
 				gap: { xs: 6, sm: 0 },
 				borderRadius: "600px",
 				margin: "3vh auto 0",
-				backdropFilter: "blur( 6.5px )",
+				backdropFilter: "blur( 9px )",
 				"-webkit-backdrop-filter": "blur( 6.5px )",
 				border: "0.5px solid ",
 				borderColor: "borderCol.main",
 				width: { md: "80vw", sm: "90vw", xs: "90vw", xl: "50vw" },
 				height: "3vw",
-				color: "#202146",
+				// color: "#202146",
 				padding: { md: "2vw", sm: "4vw", xs: "7vw", xl: "1vw" },
 			}}
 		>
@@ -54,7 +55,7 @@ export default function Navbar({}) {
 						fontSize: {
 							md: "0",
 							sm: "0",
-							xs: "1.2rem",
+							xs: "0.8rem",
 						},
 						color: "text.primary",
 					}}
@@ -62,34 +63,36 @@ export default function Navbar({}) {
 					Dhruv Kulkarni
 				</Typography>
 			) : (
-				<Box
-					sx={{
-						width: { md: 60, sm: 55, xs: 40 },
-						height: { md: 70, sm: 55, xs: 40 },
-					}}
-				>
-					{mode === "light" ? (
-						<Image
-							priority={true}
-							src={icon}
-							style={{
-								maxWidth: "100%",
-								height: "auto",
-							}}
-							alt="Dhruv Kulkarni"
-						/>
-					) : (
-						<Image
-							priority={true}
-							src={iconD}
-							style={{
-								maxWidth: "100%",
-								height: "auto",
-							}}
-							alt="Dhruv Kulkarni"
-						/>
-					)}
-				</Box>
+				<Link href="/">
+					<Box
+						sx={{
+							width: { md: 60, sm: 55, xs: 40 },
+							height: { md: 70, sm: 55, xs: 40 },
+						}}
+					>
+						{mode === "light" ? (
+							<Image
+								priority={true}
+								src={icon}
+								style={{
+									maxWidth: "100%",
+									height: "auto",
+								}}
+								alt="Dhruv Kulkarni"
+							/>
+						) : (
+							<Image
+								priority={true}
+								src={iconD}
+								style={{
+									maxWidth: "100%",
+									height: "auto",
+								}}
+								alt="Dhruv Kulkarni"
+							/>
+						)}
+					</Box>
+				</Link>
 			)}
 			<Stack
 				direction="row"

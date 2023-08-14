@@ -4,7 +4,6 @@ import { FaLinkedin } from "react-icons/fa";
 export default function Contact() {
 	return (
 		<Stack
-			id="contact"
 			gap={1}
 			sx={{
 				// minHeight: "40vh",
@@ -33,7 +32,7 @@ export default function Contact() {
 					fontSize: { sm: "1.3rem", xs: "1.3rem" },
 				}}
 			>
-				Write to me
+				Write to me at
 				<Box
 					component="span"
 					sx={{
@@ -42,17 +41,17 @@ export default function Contact() {
 					}}
 				>
 					<a
-						href="mailto:email@gmail.com"
+						href="mailto:dhruvkulkarni96@gmail.com"
 						rel="noreferrer"
 						target="_blank"
 					>
 						{" "}
-						email@gmail.com{" "}
+						dhruvkulkarni96@gmail.com{" "}
 					</a>
 				</Box>
 				or{" "}
 				<a
-					href="mailto:email@gmail.com"
+					href="https://www.linkedin.com/in/dhruvkulkarn1/"
 					rel="noreferrer"
 					target="_blank"
 				>

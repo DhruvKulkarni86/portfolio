@@ -4,8 +4,9 @@ import { getDatabase, getPage, getBlocks } from "../../src/utils/notion";
 import Link from "next/link";
 import { databaseId } from "./index";
 import styles from "./post.module.css";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Chip, Stack, Typography, IconButton } from "@mui/material";
 import Image from "next/image";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 export const Text = ({ text }) => {
 	if (!text) {
@@ -142,6 +143,7 @@ const renderBlock = (block) => {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
+						my: 2,
 					}}
 				>
 					<Image
@@ -171,7 +173,7 @@ const renderBlock = (block) => {
 					component="pre"
 					sx={{
 						backgroundColor: "secondary.main",
-						width: "fit-content",
+						maxWidth: { xs: "90vw", md: "80vw", lg: "50vw" },
 						px: 0,
 						lineHeight: 1.8,
 						borderRadius: "0 15px 15px 0",
@@ -184,11 +186,13 @@ const renderBlock = (block) => {
 						component="code"
 						key={id}
 						sx={{
-							padding: 10,
+							padding: { xs: 2, sm: 5 },
 							fontFamily: "monospace",
 							display: "flex",
 							flexWrap: "wrap",
 							color: "text.primary",
+							overflowX: { xs: "scroll", sm: "initial" },
+							fontSize: { xs: "0.8rem", sm: "1rem", md: "1rem" },
 						}}
 					>
 						{value.rich_text[0].plain_text}
@@ -228,12 +232,27 @@ export default function Post({ page, blocks }) {
 	}
 	console.log("PAGE", page);
 	console.log("BLOCL", blocks);
+
+	// let img = blocks[0].image.external.url;
+	let img = page.properties.Hero.files[0].file.url;
+	let status = page.properties.Status.status.name;
+	let title = page.properties.Name.title[0].plain_text;
+
 	return (
 		<>
 			<Head>
-				<title>
-					Showcase : {page.properties.Name.title[0].plain_text}
-				</title>
+				<title>Showcase : {title}</title>
+				<meta property="og:type" content="article" />
+				<meta
+					property="og:title"
+					content={page.properties.Name.title[0].plain_text}
+				/>
+				{/* <meta property="og:url" content=""/> */}
+				<meta property="og:image" content={img} />
+				<meta property="article:tag" content="React" />
+				<meta property="article:tag" content="MERN" />
+				<meta property="article:tag" content="Open Source" />
+				<meta property="article:tag" content="GameTrakr" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Box
@@ -254,20 +273,75 @@ export default function Post({ page, blocks }) {
 						maxWidth: { xs: "100%", md: "80vw", xl: "50vw" },
 					}}
 				>
-					<Typography
-						variant="h1"
-						sx={{
-							fontWeight: 500,
-							fontSize: {
-								md: "3rem",
-								sm: "3rem",
-								xs: "3rem",
-							},
-							textAlign: { xs: "center", sm: "initial" },
-						}}
-					>
-						<Text text={page.properties.Name.title} />
-					</Typography>
+					<Stack direction="column" spacing={1}>
+						<Typography
+							variant="h1"
+							sx={{
+								fontWeight: 500,
+								fontSize: {
+									md: "3rem",
+									sm: "3rem",
+									xs: "3rem",
+								},
+							}}
+						>
+							<Text text={page.properties.Name.title} />
+						</Typography>
+						<Chip
+							variant="outlined"
+							color={
+								status === "Deployed"
+									? "success"
+									: status === "Archived"
+									? "error"
+									: "info"
+							}
+							label={page.properties.Status.status.name}
+							// size="medium"
+							sx={{
+								"& .MuiChip-icon": {
+									fontSize: "1.5rem",
+								},
+								"& .MuiChip-label": {
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+								},
+								maxWidth: "40%",
+							}}
+						/>
+						<Stack
+							direction="row"
+							spacing={1}
+							sx={{ alignItems: "center" }}
+						>
+							<IconButton
+								aria-label="github"
+								sx={{ color: "text.primary" }}
+							>
+								<a
+									href={page.properties.URL.url}
+									rel="noreferrer"
+									target="_blank"
+								>
+									<FaGithub />
+								</a>
+							</IconButton>
+							<IconButton
+								aria-label="demo"
+								sx={{ color: "text.primary" }}
+							>
+								<a
+									href={page.properties.DeployURL.url}
+									rel="noreferrer"
+									target="_blank"
+								>
+									<FaExternalLinkAlt />
+								</a>
+							</IconButton>
+						</Stack>
+					</Stack>
+
 					<section>
 						{blocks.map((block) => (
 							<Fragment key={block.id}>

@@ -5,13 +5,14 @@ import createEmotionServer from "@emotion/server/create-instance";
 // import theme, { roboto } from "../src/theme";
 import createEmotionCache from "../src/utils/createEmotionCache";
 import { poppins } from "@/styles/theme/lightTheme";
+import { inter } from "@/styles/theme/lightTheme";
 
 export default function MyDocument(props) {
 	const { emotionStyleTags } = props;
 
 	return (
 		// <Html lang="en" className={roboto.className}>
-		<Html lang="en" className={poppins.className}>
+		<Html lang="en" className={inter.className}>
 			<Head>
 				<link
 					rel="apple-touch-icon"
