@@ -230,8 +230,8 @@ export default function Post({ page, blocks }) {
 	if (!page || !blocks) {
 		return <div />;
 	}
-	console.log("PAGE", page);
-	console.log("BLOCL", blocks);
+	// console.log("PAGE", page);
+	// console.log("BLOCL", blocks);
 
 	// let img = blocks[0].image.external.url;
 	let img = page.properties.Hero.files[0].file.url;

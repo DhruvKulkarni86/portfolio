@@ -7,7 +7,7 @@ import { Box, Typography } from "@mui/material";
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Projects({ posts }) {
-	console.log("POSTS", posts);
+	// console.log("POSTS", posts);
 	return (
 		<>
 			<Head>
