@@ -1,0 +1,44 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "projectTitle": "Fullstack Ecommerce WebApp",
+            "image": [
+                "/ecom2.png",
+                "/ecom3.png"
+            ],
+            "tech": [
+                "React",
+                "Redux Toolkit",
+                "MUI",
+                "ExpressJS",
+                "MongoDB",
+                "Firebase",
+                "Razorpay"
+            ],
+            "description": "A Fullstack Ecommerce WebApp developed from scratch using the MERN stack. Features a minimal, responsive and performant UI developed with MUI, a robust API to handle inventory and customers created in ExpressJS, Razorpay integration to handle payments, along with a custom CMS solution",
+            "githubLink": "https://github.com/DhruvKulkarni86/eCommerce_fullstack",
+            "demoLink": "https://balajinursery.netlify.app/",
+            "blogLink": "https://example.com/project-blog"
+        },
+        {
+            "id": 2,
+            "projectTitle": "GameTrakr - Track Game Prices",
+            "image": [
+                "/gt.png",
+                "/gtRes.png"
+            ],
+            "tech": [
+                "React",
+                "ExpressJS",
+                "MongoDB",
+                "Vanilla CSS",
+                "JWT"
+            ],
+            "description": "A webapp to search, shop, explore and keep track of deals on your favourite games across different stores. Developed using the MERN stack, GameTrakr features a functional, responsive UI created using vanilla CSS, custom auth solutions created in expressJS",
+            "githubLink": "https://github.com/DhruvKulkarni86/GameTrakr",
+            "demoLink": "https://gametrakr.netlify.app/",
+            "blogLink": "https://example.com/project-blog"
+        }
+    ]
+}

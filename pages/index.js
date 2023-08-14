@@ -17,7 +17,18 @@ export default function Home({ projData }) {
 					name="viewport"
 					content="width=device-width, initial-scale=1"
 				/>
-
+				<meta
+					property="og:title"
+					content="Dhruv Kulkarni's Portfolio"
+				/>
+				<meta
+					property="og:description"
+					content="Hi, I'm Dhruv Kulkarni - Welcome to my portfolio website"
+				/>
+				<meta
+					property="og:image"
+					content="https://og-image.xyz/og/Dhruv Kulkarni/Web Developer/dhruvkulkarni.vercel.app/https/atkinson/cheerfulorange/black/data.pngL"
+				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<PageSection>

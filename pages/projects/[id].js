@@ -373,6 +373,5 @@ export const getStaticProps = async (context) => {
 			page,
 			blocks,
 		},
-		// revalidate: 1,
 	};
 };
