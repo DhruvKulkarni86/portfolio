@@ -27,7 +27,7 @@ export default function Home({ projData }) {
 				/>
 				<meta
 					property="og:image"
-					content="https://og-image.xyz/og/Dhruv Kulkarni/Web Developer/dhruvkulkarni.vercel.app/https/atkinson/cheerfulorange/black/data.pngL"
+					content="https://raw.githubusercontent.com/DhruvKulkarni86/eCommerce_fullstack/main/Static/data.png"
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>

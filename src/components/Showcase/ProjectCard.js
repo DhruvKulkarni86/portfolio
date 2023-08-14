@@ -29,19 +29,19 @@ export default function ProjectCard({
 	Color,
 }) {
 	// const dir = project.id;
-	console.log("PASS", {
-		des: Description.rich_text[0].plain_text,
-		name: Name.title[0].plain_text,
-		status: Status.status.name,
-		blogStatus: BlogStatus.status.name,
-		tech: Technologies,
-		URL: URL.url,
-		deploy: DeployURL.url,
-		hero: Hero.files[0].file.url,
-		ID: id,
-	});
+	// console.log("PASS", {
+	// 	des: Description.rich_text[0].plain_text,
+	// 	name: Name.title[0].plain_text,
+	// 	status: Status.status.name,
+	// 	blogStatus: BlogStatus.status.name,
+	// 	tech: Technologies,
+	// 	URL: URL.url,
+	// 	deploy: DeployURL.url,
+	// 	hero: Hero.files[0].file.url,
+	// 	ID: id,
+	// });
 	let clr = Color.select.name;
-	console.log("COLOR", clr);
+	// console.log("COLOR", clr);
 
 	return (
 		<>
