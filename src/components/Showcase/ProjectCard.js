@@ -29,17 +29,17 @@ export default function ProjectCard({
 	Color,
 }) {
 	// const dir = project.id;
-	// console.log("PASS", {
-	// 	des: Description.rich_text[0].plain_text,
-	// 	name: Name.title[0].plain_text,
-	// 	status: Status.status.name,
-	// 	blogStatus: BlogStatus.status.name,
-	// 	tech: Technologies,
-	// 	URL: URL.url,
-	// 	deploy: DeployURL.url,
-	// 	hero: Hero.files[0].file.url,
-	// 	ID: id,
-	// });
+	console.log("PASS", {
+		des: Description.rich_text[0].plain_text,
+		name: Name.title[0].plain_text,
+		status: Status.status.name,
+		blogStatus: BlogStatus.status.name,
+		tech: Technologies,
+		URL: URL.url,
+		deploy: DeployURL.url,
+		hero: Hero.files[0].file.url,
+		ID: id,
+	});
 	let clr = Color.select.name;
 	// console.log("COLOR", clr);
 
@@ -85,14 +85,20 @@ export default function ProjectCard({
 						direction="row"
 						sx={{ alignSelf: { xs: "center", sm: "flex-start" } }}
 					>
-						<IconButton
-							aria-label="github"
-							sx={{ color: "text.primary" }}
-						>
-							<a href={URL.url} rel="noreferrer" target="_blank">
-								<FaGithub />
-							</a>
-						</IconButton>
+						{URL.url !== null && (
+							<IconButton
+								aria-label="github"
+								sx={{ color: "text.primary" }}
+							>
+								<a
+									href={URL.url}
+									rel="noreferrer"
+									target="_blank"
+								>
+									<FaGithub />
+								</a>
+							</IconButton>
+						)}
 						{Status.status.name === "Deployed" && (
 							<IconButton
 								aria-label="demo"
