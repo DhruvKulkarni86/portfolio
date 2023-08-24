@@ -84,18 +84,20 @@ export default function GradientCard({ project }) {
 								href={project.githubLink}
 								rel="noreferrer"
 								target="_blank"
+								aria-label="github"
 							>
 								<FaGithub />
 							</a>
 						</IconButton>
 						<IconButton
-							aria-label="github"
+							aria-label="demo"
 							sx={{ color: "text.primary" }}
 						>
 							<a
 								href={project.demoLink}
 								rel="noreferrer"
 								target="_blank"
+								aria-label="demo"
 							>
 								<FaExternalLinkAlt />
 							</a>

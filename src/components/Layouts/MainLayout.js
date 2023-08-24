@@ -24,7 +24,7 @@ export default function MainLayout({ children }) {
 					// paddingX: { xs: "5vw", sm: 0 },
 					// paddingY: { md: "10vw", sm: "15vw", xs: "25vw" },
 					minHeight: { xs: "100vh", xl: "50vh" },
-
+					overflowY: "hidden",
 					backgroundColor: "primary.main",
 				}}
 			>

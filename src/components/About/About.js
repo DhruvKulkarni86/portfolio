@@ -40,7 +40,7 @@ export default function About() {
 					variant="body1"
 					sx={{
 						color: "text.light",
-						textAlign: { xs: "justify", sm: "left" },
+						textAlign: { xs: "left", sm: "left" },
 					}}
 				>
 					I create dynamic and performant Web Applications using the

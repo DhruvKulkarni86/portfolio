@@ -3,19 +3,18 @@ import Link from "next/link";
 
 export default function NavLink({ name, path }) {
 	return (
-		<Link href={path}>
+		<Link aria-label={name} href={path}>
 			<Typography
-				variant="button"
+				variant="body1"
 				sx={{
 					mx: 1,
 					padding: 1,
 					cursor: "pointer",
 					fontSize: { xs: "1rem", xl: "1.5rem" },
-					transition: "0.1s",
+					transition: "0.2s",
+					textTransform: "uppercase",
 					"&:hover": {
-						fontWeight: "bold",
-						transform: "scale(1.1)",
-						// color: "text.secondary",
+						transform: "scale(1.05)",
 					},
 				}}
 			>

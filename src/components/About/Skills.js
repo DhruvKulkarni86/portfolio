@@ -21,6 +21,7 @@ export default function Skills() {
 			<Stack gap={2}>
 				<Stack>
 					<Typography
+						component="p"
 						variant="subtitle1"
 						fontWeight="500"
 						sx={{
@@ -55,6 +56,7 @@ export default function Skills() {
 				</Stack>
 				<Stack>
 					<Typography
+						component="p"
 						variant="subtitle1"
 						fontWeight="500"
 						sx={{

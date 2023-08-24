@@ -68,7 +68,7 @@ export default function Hero() {
 				<Typography
 					variant="body1"
 					sx={{
-						textAlign: { xs: "justify", sm: "initial" },
+						textAlign: { xs: "center", sm: "initial" },
 						fontSize: { md: "1.5rem", sm: "1rem" },
 						fontWeight: 300,
 					}}
