@@ -1,7 +1,7 @@
 import { IconButton, Stack } from "@mui/material";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-
+import { ImStackoverflow } from "react-icons/im";
 export default function Social() {
 	return (
 		<Stack
@@ -40,6 +40,19 @@ export default function Social() {
 					aria-label="linkedin"
 				>
 					<FaLinkedin />
+				</a>
+			</IconButton>
+			<IconButton
+				aria-label="stackoverflow"
+				sx={{ color: "text.primary" }}
+			>
+				<a
+					href="https://stackoverflow.com/users/16339491/doomguy096"
+					rel="noreferrer"
+					target="_blank"
+					aria-label="stackoverflow"
+				>
+					<ImStackoverflow />
 				</a>
 			</IconButton>
 		</Stack>

@@ -60,6 +60,7 @@ export default function ThemeSwitch() {
 
 	return (
 		<MaterialUISwitch
+			aria-label="switch"
 			checked={darkMode}
 			onChange={handleChange}
 			// defaultChecked

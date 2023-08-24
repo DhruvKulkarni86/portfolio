@@ -29,17 +29,17 @@ export default function ProjectCard({
 	Color,
 }) {
 	// const dir = project.id;
-	console.log("PASS", {
-		des: Description.rich_text[0].plain_text,
-		name: Name.title[0].plain_text,
-		status: Status.status.name,
-		blogStatus: BlogStatus.status.name,
-		tech: Technologies,
-		URL: URL.url,
-		deploy: DeployURL.url,
-		hero: Hero.files[0].file.url,
-		ID: id,
-	});
+	// console.log("PASS", {
+	// 	des: Description.rich_text[0].plain_text,
+	// 	name: Name.title[0].plain_text,
+	// 	status: Status.status.name,
+	// 	blogStatus: BlogStatus.status.name,
+	// 	tech: Technologies,
+	// 	URL: URL.url,
+	// 	deploy: DeployURL.url,
+	// 	hero: Hero.files[0].file.url,
+	// 	ID: id,
+	// });
 	let clr = Color.select.name;
 	// console.log("COLOR", clr);
 
@@ -93,6 +93,7 @@ export default function ProjectCard({
 								<a
 									href={URL.url}
 									rel="noreferrer"
+									aria-label="github"
 									target="_blank"
 								>
 									<FaGithub />
@@ -108,6 +109,7 @@ export default function ProjectCard({
 									href={DeployURL.url}
 									rel="noreferrer"
 									target="_blank"
+									aria-label="live demo"
 								>
 									<FaExternalLinkAlt />
 								</a>
@@ -118,7 +120,10 @@ export default function ProjectCard({
 								aria-label="blog"
 								sx={{ color: "text.primary" }}
 							>
-								<Link href={`/projects/${id}`}>
+								<Link
+									aria-label="blog"
+									href={`/projects/${id}`}
+								>
 									<CgFileDocument />
 								</Link>
 							</IconButton>
@@ -161,7 +166,7 @@ export default function ProjectCard({
 				<Box
 					sx={{
 						background: clr === "2" ? gr1 : gr2,
-						width: { xs: "100%", md: "40%" },
+						width: { xs: "100%", md: "40%", sm: "50%" },
 						height: "300px",
 						margin: "auto",
 						display: "flex",
